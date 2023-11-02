@@ -3,8 +3,7 @@ import sys
 
 def main():
 	if len(sys.argv) <= 1:
-		print("No arguments provided")
-	return
+		return
 result = 0
 for arg in sys.argv[1:]:
 	result += int(arg)
