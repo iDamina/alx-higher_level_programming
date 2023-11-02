@@ -7,6 +7,6 @@ def main():
 result = 0
 for arg in sys.argv[1:]:
 	result += int(arg)
-print("{}".format(result))
+print(f"{result}")
 if __name__ == "__main__":
 	main()
