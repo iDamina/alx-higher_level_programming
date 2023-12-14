@@ -55,18 +55,18 @@ class Rectangle(Base):
         self.__y = value
 
     def validate_integer(self, name, value, eq=True):
-        '''Method for validating the value.'''
+        """ Method for validating the value."""
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if eq and value < 0:
             raise ValueError("{} must be >= 0".format(name))
         elif not eq and value <= 0:
             raise ValueError("{} must be > 0".format(name))
-    """
-    def area(self):
-        '''Computes area of this rectangle.'''
-        return self.width * self.height
 
+    def area(self):
+        """Computes area of this rectangle. """
+        return self.width * self.height
+    """
     def display(self):
         '''Prints string representation of this rectangle.'''
         s = '\n' * self.y + \
