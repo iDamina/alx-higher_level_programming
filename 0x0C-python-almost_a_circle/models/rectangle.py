@@ -70,8 +70,8 @@ class Rectangle(Base):
     def display(self):
         """ Prints string representation of this rectangle. """
         string = '\n' * self.y + \
-        (' ' * self.x + '#' * self.width + '\n') * self.height
-        print(string, end="")
+            (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(string, end='')
     """
     def __str__(self):
         '''Returns string info about this rectangle.'''
