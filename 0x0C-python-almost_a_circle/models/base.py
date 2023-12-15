@@ -46,9 +46,9 @@ class Base:
         """ Loads instance from dictionary. """
         from models.rectangle import Rectangle
         from models.square import Square
-        if cls.__name__ is Rectangle:
+        if cls is Rectangle:
             new = cls(1, 1)
-        elif cls.__name__ is Square:
+        elif cls is Square:
             new = Square(1)
         else:
             new = None
