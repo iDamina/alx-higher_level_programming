@@ -32,6 +32,7 @@ class Base:
         if json_string is None or json_string == []:
             return []
         return loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ Writes the JSON serialization of a list of objects to a file """
