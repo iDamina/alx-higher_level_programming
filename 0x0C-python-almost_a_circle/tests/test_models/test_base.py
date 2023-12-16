@@ -37,7 +37,7 @@ class TestBase(unittest.TestCase):
         '''Tests constructor signature.'''
         with self.assertRaises(TypeError) as e:
             Base.__init__()
-        msg = "__init__() missing 1 required positional argument: 'self'"
+        msg = "Base.__init__() missing 1 required positional argument: 'self'"
         self.assertEqual(str(e.exception), msg)
 
     def test_D_constructor_args_2(self):
@@ -90,9 +90,8 @@ were given"
         '''Tests to_json_string() signature:'''
         with self.assertRaises(TypeError) as e:
             Base.to_json_string()
-            string = "to_json_string() missing 1 required positional argument: \
-'list_dictionaries'"
-        self.assertEqual(str(e.exception), string)
+            s = "to_json_string() missing 1 required positional argument: 'list_dictionaries'"
+        self.assertEqual(str(e.exception), s)
 
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
@@ -162,45 +161,45 @@ were given"
         '''Tests to_json_string() signature:'''
         with self.assertRaises(TypeError) as e:
             Base.from_json_string()
-        string = "from_json_string() missing 1 required positional argument: \
+        s = "from_json_string() missing 1 required positional argument: \
             'json_string'"
-        self.assertEqual(str(e.exception), string)
+        self.assertEqual(str(e.exception), s)
 
         self.assertEqual(Base.from_json_string(None), [])
         self.assertEqual(Base.from_json_string(""), [])
 
-        string = '[{"x": 1, "y": 2, "width": 3, "id": 4, "height": 5}, \
+        s = '[{"x": 1, "y": 2, "width": 3, "id": 4, "height": 5}, \
 {"x": 101, "y": 20123, "width": 312321, "id": 522244, "height": 34340}]'
 
         d = [{'x': 1, 'y': 2, 'width': 3, 'id': 4, 'height': 5},
              {'x': 101, 'y': 20123, 'width': 312321, 'id': 522244,
               'height': 34340}]
-        self.assertEqual(Base.from_json_string(string), d)
+        self.assertEqual(Base.from_json_string(s), d)
 
         d = [{}, {}]
-        string = '[{}, {}]'
-        self.assertEqual(Base.from_json_string(string), d)
+        s = '[{}, {}]'
+        self.assertEqual(Base.from_json_string(s), d)
         d = [{}]
-        string = '[{}]'
+        s = '[{}]'
         self.assertEqual(Base.from_json_string(string), d)
 
         d = [{"foobarrooo": 989898}, {"abc": 123}, {"HI": 0}]
-        string = '[{"foobarrooo": 989898}, {"abc": 123}, {"HI": 0}]'
-        self.assertEqual(Base.from_json_string(string), d)
+        s = '[{"foobarrooo": 989898}, {"abc": 123}, {"HI": 0}]'
+        self.assertEqual(Base.from_json_string(s), d)
 
         d = [{"foobarrooo": 989898}]
-        string = '[{"foobarrooo": 989898}]'
-        self.assertEqual(Base.from_json_string(string), d)
+        s = '[{"foobarrooo": 989898}]'
+        self.assertEqual(Base.from_json_string(s), d)
 
         d = [{'x': 1, 'y': 2, 'width': 3, 'id': 4, 'height': 5}]
-        string = '[{"x": 1, "y": 2, "width": 3, "id": 4, "height": 5}]'
-        self.assertEqual(Base.from_json_string(string), d)
+        s = '[{"x": 1, "y": 2, "width": 3, "id": 4, "height": 5}]'
+        self.assertEqual(Base.from_json_string(s), d)
 
         d = [{'x': 101, 'y': 20123, 'width': 312321, 'id': 522244,
               'height': 34340}]
-        string = '[{"x": 101, "y": 20123, "width": 312321, "id": 522244, \
+        s = '[{"x": 101, "y": 20123, "width": 312321, "id": 522244, \
                "height": 34340}]'
-        self.assertEqual(Base.from_json_string(string), d)
+        self.assertEqual(Base.from_json_string(s), d)
 
         list_in = [
             {'id': 89, 'width': 10, 'height': 4},
