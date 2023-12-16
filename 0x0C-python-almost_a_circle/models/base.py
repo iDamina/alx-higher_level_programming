@@ -99,7 +99,7 @@ class Base:
                 else:
                     d = {"id": row[0], "size": row[1],
                          "x": row[2], "y": row[3]}
-                        ret.append(cls.create(**d))
+                ret.append(cls.create(**d))
         return ret
 
     @staticmethod
@@ -125,4 +125,4 @@ class Base:
             t.forward(i.height)
             t.left(90)
             t.end_fill()
-        time.sleiep(5)
+        time.sleep(5)
