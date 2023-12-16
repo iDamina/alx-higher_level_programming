@@ -73,14 +73,14 @@ class Base:
         if list_objs is not None:
             if cls is Rectangle:
                 list_objs = [[o.id, o.width, o.height, o.x, o.y]
-                            for o in list_objs]
+                             for o in list_objs]
             else:
                 list_objs = [[o.id, o.size, o.x, o.y]
-                        for o in list_objs]
-        with open('{}.csv'.format(cls.__name__), 'w',
-                  newline='', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            writer.writerows(list_objs)
+                             for o in list_objs]
+            with open('{}.csv'.format(cls.__name__), 'w',
+                      newline='', encoding='utf-8') as f:
+                writer = csv.writer(f)
+                writer.writerows(list_objs)
 
     @classmethod
     def load_from_file_csv(cls):
