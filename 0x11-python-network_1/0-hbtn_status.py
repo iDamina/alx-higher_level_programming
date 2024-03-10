@@ -10,6 +10,6 @@ try:
         print("Body response:")
         print("\t- type:", type(body))
         print("\t- content:", body.decode('utf-8'))
-        print("\t- utf8 content:", body.decode('utf-8'))	
+        print("\t- utf8 content:", body.decode('utf-8'))
 except urllib.error.URLError as e:
     print("Error:", e)
