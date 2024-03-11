@@ -11,10 +11,5 @@ if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
     data = {'email': email}
-try:
     response = requests.post(url, data=data)
-    print("Body response:")
-    print("\t- type:", type(response.text))
-    print("\t- content:", response.text)
-except requests.RequestException as e:
-    print("Error:", e)
+    print(response.text)
