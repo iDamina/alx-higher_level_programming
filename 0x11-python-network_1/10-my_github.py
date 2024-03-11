@@ -5,12 +5,12 @@
 """
 import requests
 import sys
+from requests.auth import HTTPBasicAuth
 
 if __name__ == "__main__":
-    req = requests.get('https://api.github.com/user',
-                       auth=(sys.argv[1], sys.argv[2]))
-    json = r.json()
-    try:
-        print(json['id'])
-    except ValueError as invalid_json:
-        print("Not a valid JSON")
+    url = "https://api.github.com/user"
+    username = sys.argv[1]
+    password = sys.argv[2]
+    response = requests.get(url, auth=HTTPBasicAuth(username, password))
+    json_obj = response.json()
+    print(json_obj.get("id"))
